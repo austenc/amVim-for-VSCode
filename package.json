@@ -45,6 +45,15 @@
                     "default": true,
                     "description": "Set to `false` to disable `Ctrl+<key>` keybindings."
                 },
+                "amVim.customKeybindings": {
+                    "type": "array",
+                    "default": [{
+                        "from": "j j",
+                        "to": "escape",
+                        "modes": "Insert",
+                        "recursive": false
+                    }]
+                },
                 "amVim.startInInsertMode": {
                     "type": "boolean",
                     "default": false,

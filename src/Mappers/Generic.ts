@@ -1,3 +1,4 @@
+import {Configuration} from '../Configuration';
 import {SpecialKeyCommon, SpecialKeyMatchResult} from './SpecialKeys/Common';
 
 export enum MatchResultKind {FAILED, WAITING, FOUND}

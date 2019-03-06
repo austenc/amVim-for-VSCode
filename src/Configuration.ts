@@ -12,9 +12,12 @@ export class Configuration {
     private static _defaultModeID: ModeID;
     static get defaultModeID(): ModeID { return this._defaultModeID; }
 
+    private static _customKeybindings: Array<object>;
+    static get customKeybindings(): Array<object> { return this._customKeybindings; }
+
     private static _smartRelativeLineNumbers: boolean;
     static get smartRelativeLineNumbers(): boolean { return this._smartRelativeLineNumbers; }
-
+y
     static init(): void {
         if (this.isReady) {
             return;
@@ -33,6 +36,7 @@ export class Configuration {
         this.updateCache();
         this.updateKeybindingContexts();
 
+        this._customKeybindings = this.getExtensionSetting<Array<object>>('customKeybindings', []);
         this._defaultModeID = this.getExtensionSetting<boolean>('startInInsertMode', false) ? ModeID.INSERT : ModeID.NORMAL;
         this._smartRelativeLineNumbers = this.getExtensionSetting<boolean>('smartRelativeLineNumbers', false);
 
